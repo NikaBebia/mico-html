@@ -1,3 +1,6 @@
+<?php require_once 'data.php'; ?>
+<?php require_once 'functions.php'; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -81,10 +84,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
-                  <li class="nav-item ">
+                  <!-- მენიუს გადინამიურება -->
+                  <?php create_nav_menu($categories); ?>
+                  <!-- <li class="nav-item ">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="about.html"> About</a>
                   </li>
                   <li class="nav-item">
@@ -96,9 +101,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="testimonial.html">Testimonial</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="contact.html">Contact Us</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <div class="quote_btn-container">
@@ -129,44 +134,54 @@
   </div>
 
 
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container  ">
+  <!-- contact section -->
+  <section class="contact_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Get In Touch
+        </h2>
+      </div>
       <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/about-img.jpg" alt="">
+        <div class="col-md-7">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" placeholder="Full Name" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                About <span>Hospital</span>
-              </h2>
-            </div>
-            <p>
-              has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors
-            </p>
-            <a href="">
-              Read More
-            </a>
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="images/contact-img.jpg" alt="">
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- end about section -->
-
+  <!-- end contact section -->
 
   <!-- info section -->
   <section class="info_section ">
     <div class="container">
       <div class="info_top">
         <div class="info_logo">
-          <a href="">
+          <a href="index.php">
             <img src="images/logo.png" alt="">
           </a>
         </div>
@@ -229,7 +244,7 @@
                 <a href="index.html">
                   Home
                 </a>
-                <a class="active" href="about.html">
+                <a href="about.html">
                   About
                 </a>
                 <a href="treatment.html">
@@ -241,7 +256,7 @@
                 <a href="testimonial.html">
                   Testimonial
                 </a>
-                <a href="contact.html">
+                <a class="active" href="contact.html">
                   Contact us
                 </a>
               </div>

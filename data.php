@@ -8,23 +8,23 @@ $categories = [
     ],
     [
         'title' => 'About',
-        'link'  => 'about.html'
+        'link'  => 'about.php'
     ],
     [
         'title' => 'Treatment',
-        'link'  => 'treatment.html'
+        'link'  => 'treatment.php'
     ],
     [
         'title' => 'Doctors',
-        'link'  => 'doctor.html'
+        'link'  => 'doctor.php'
     ],
     [
         'title' => 'Testimonial',
-        'link'  => 'testimonial.html'
+        'link'  => 'testimonial.php'
     ],
     [
         'title' => 'Contact Us',
-        'link'  => 'contact.html'
+        'link'  => 'contact.php'
     ],
 ];
 
@@ -32,22 +32,22 @@ $categories = [
 $treatments = [
     [
         'title' => 'Nephrologist Care',
-        'text'  => 'Alteration in some form, by injected humour, or randomised words.',
+        'text'  => "alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything",
         'image' => 'images/t1.png'
     ],
     [
         'title' => 'Eye Care',
-        'text'  => 'Alteration in some form, by injected humour, or randomised words.',
+        'text'  => "alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything",
         'image' => 'images/t2.png'
     ],
     [
         'title' => 'Pediatrician Clinic',
-        'text'  => 'Alteration in some form, by injected humour, or randomised words.',
+        'text'  => "alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything",
         'image' => 'images/t3.png'
     ],
     [
         'title' => 'Parental Care',
-        'text'  => 'Alteration in some form, by injected humour, or randomised words.',
+        'text'  => "alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything",
         'image' => 'images/t4.png'
     ],
 ];
@@ -69,6 +69,11 @@ $doctors = [
         'degree' => 'MBBS',
         'image'  => 'images/team3.jpg'
     ],
+    [
+        'name'   => 'Morco',
+        'degree' => 'MBBS',
+        'image'  => 'images/team3.jpg'
+    ],
 ];
 
 // 4. Testimonials სექცია
@@ -76,16 +81,16 @@ $testimonials = [
     [
         'name' => 'Morijorch',
         'role' => 'Default model text',
-        'text' => 'Editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites.'
+        'text' => "editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various"
     ],
     [
         'name' => 'Rochak',
         'role' => 'Default model text',
-        'text' => 'Various editors now use Lorem Ipsum as their default model text.'
+        'text' => "Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."
     ],
     [
         'name' => 'Brad Johns',
         'role' => 'Default model text',
-        'text' => 'A search for lorem ipsum will uncover many web sites still in their infancy.'
+        'text' => "Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy, editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various"
     ]
 ];
