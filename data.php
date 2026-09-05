@@ -94,3 +94,33 @@ $testimonials = [
         'text' => "Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy, editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various"
     ]
 ];
+
+$footer_info = [
+    'contact' => [
+        'location' => 'Location',
+        'phone'    => '+01 1234567890',
+        'email'    => 'demo@gmail.com',
+        'socials'  => [
+            'facebook'  => 'https://facebook.com',
+            'twitter'   => 'https://twitter.com',
+            'linkedin'  => 'https://linkedin.com',
+            'instagram' => 'https://instagram.com'
+        ]
+    ],
+    'links_col' => [
+        ['title' => 'Home', 'link' => 'index.php'],
+        ['title' => 'About', 'link' => 'about.php'],
+        ['title' => 'Treatment', 'link' => 'treatment.php'],
+        ['title' => 'Doctors', 'link' => 'doctor.php'],
+        ['title' => 'Testimonial', 'link' => 'testimonial.php'],
+        ['title' => 'Contact Us', 'link' => 'contact.php'],
+    ],
+    'posts' => [
+        ['img' => 'images/post1.jpg', 'title' => 'Normal distribution', 'link' => '#'],
+        ['img' => 'images/post2.jpg', 'title' => 'Normal distribution', 'link' => '#']
+    ],
+    'news' => [
+        ['img' => 'images/post3.jpg', 'title' => 'Normal distribution'],
+        ['img' => 'images/post4.png', 'title' => 'Normal distribution']
+    ]
+];

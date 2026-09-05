@@ -70,3 +70,76 @@ function testimonials(array $testimonials): void {
         echo '</div>';
     }
 }
+
+// 5. footer-ის გადინამიურება
+function dinamic_footer(array $footer): void {
+    echo '<section class="info_section">';
+    echo '  <div class="container">';
+    echo '      <div class="info_top">';
+    echo '          <div class="info_logo">';
+    echo '              <a href="index.php">';
+    echo '                  <img src="images/logo.png" alt="">';
+    echo '              </a>';
+    echo '          </div>';
+    echo '          <div class="info_form">';
+    echo '              <form action="">';
+    echo '                  <input type="email" placeholder="Your email">';
+    echo '                  <button> Subscribe </button>';
+    echo '              </form>';
+    echo '          </div>';
+    echo '      </div>';
+    echo '      <div class="info_bottom layout_padding2">';
+    echo '          <div class="row info_main_row">';
+
+    echo '              <div class="col-md-6 col-lg-3">';
+    echo '                  <h5>Address</h5>';
+    echo '              <div class="info_contact">';
+    echo '                  <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>' . $footer['contact']['location'] . '</span></a>';
+    echo '                  <a href="tel:' . $footer['contact']['phone'] . '"><i class="fa fa-phone" aria-hidden="true"></i><span>Call ' . $footer['contact']['phone'] . '</span></a>';
+    echo '                  <a href="mailto:' . $footer['contact']['email'] . '"><i class="fa fa-envelope" aria-hidden="true"></i><span>' . $footer['contact']['email'] . '</span></a>';
+    echo '              </div>';
+    echo '              <div class="social_box">';
+    foreach ($footer['contact']['socials'] as $icon => $link) {
+        echo '              <a href="' . $link . '" target=_blank><i class="fa fa-' . $icon . '" aria-hidden="true"></i></a>';
+    }
+    echo '              </div>';
+    echo '          </div>';
+
+    echo '          <div class="col-md-6 col-lg-3">';
+    echo '              <div class="info_links">';
+    echo '                  <h5>Useful Link</h5>';
+    echo '                  <div class="info_links_menu">';
+    foreach ($footer['links_col'] as $item) {
+        echo '                  <a href="' . $item['link'] . '">' . $item['title'] . '</a>';
+    }
+    echo '                  </div>';
+    echo '              </div>';
+    echo '          </div>';
+
+    echo '          <div class="col-md-6 col-lg-3">';
+    echo '              <div class="info_post">';
+    echo '                  <h5> LATEST POSTS </h5>';
+    foreach ($footer['posts'] as $post) {
+        echo '              <div class="post_box">';
+        echo '                  <div class="img-box"><img src="' . $post['img'] . '" alt=""></div>';
+        echo '                  <p>' . $post['title'] . '</p>';
+        echo '              </div>';
+    }
+    echo '              </div>';
+    echo '          </div>';
+
+    echo '          <div class="col-md-6 col-lg-3">';
+    echo '              <div class="info_post">';
+    echo '                  <h5> News </h5>';
+    foreach ($footer['news'] as $news_item) {
+        echo '                      <div class="post_box">';
+        echo '                          <div class="img-box"><img src="' . $news_item['img'] . '" alt=""></div>';
+        echo '                          <p>' . $news_item['title'] . '</p>';
+        echo '                      </div>';
+    }
+    echo '              </div>';
+    echo '          </div>';
+    echo '      </div>';
+    echo '  </div>';
+    echo '</section>';
+}

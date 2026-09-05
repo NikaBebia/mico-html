@@ -242,7 +242,9 @@ require_once 'functions.php'; ?>
 
 
   <!-- info section -->
-  <section class="info_section ">
+  <!-- footer სექციის გადინამიურება  -->
+  <?php dinamic_footer($footer_info); ?>
+  <!-- <section class="info_section ">
     <div class="container">
       <div class="info_top">
         <div class="info_logo">
@@ -380,7 +382,7 @@ require_once 'functions.php'; ?>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end info_section -->
 
 
