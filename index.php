@@ -246,52 +246,50 @@
     <!-- end slider section -->
   </div>
 
-
   <!-- book section -->
-
   <section class="book_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col">
-          <form>
+          <form action="appointment-success.php" method="POST"> <!-- დამატებულია action და method post-ი -->
             <h4>
               BOOK <span>APPOINTMENT</span>
             </h4>
             <div class="form-row ">
               <div class="form-group col-lg-4">
                 <label for="inputPatientName">Patient Name </label>
-                <input type="text" class="form-control" id="inputPatientName" placeholder="">
+                <input type="text" class="form-control" id="inputPatientName" name="patient_name" placeholder=""> <!-- დამატებულია name -->
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputDoctorName">Doctor's Name</label>
-                <select name="" class="form-control wide" id="inputDoctorName">
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
+                <select class="form-control wide" id="inputDoctorName" name="doctor_name" required>  <!-- დამატებულია name -->
+                  <option value="Doctor 1">Doctor 1</option>
+                  <option value="Doctor 2">Doctor 2</option>
+                  <option value="Doctor 3">Doctor 3</option>
                 </select>
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputDepartmentName">Department's Name</label>
-                <select name="" class="form-control wide" id="inputDepartmentName">
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
+                <select class="form-control wide" id="inputDepartmentName" name="department" required>  <!-- დამატებულია name -->
+                  <option value="Department 1">Department 1</option>
+                  <option value="Department 2">Department 2</option>
+                  <option value="Department 3">Department 3</option>
                 </select>
               </div>
             </div>
             <div class="form-row ">
               <div class="form-group col-lg-4">
                 <label for="inputPhone">Phone Number</label>
-                <input type="number" class="form-control" id="inputPhone" placeholder="XXXXXXXXXX">
+                <input type="number" class="form-control" id="inputPhone" name="phone" placeholder="XXXXXXXXXX" required>  <!-- დამატებულია name -->
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputSymptoms">Symptoms</label>
-                <input type="text" class="form-control" id="inputSymptoms" placeholder="">
+                <input type="text" class="form-control" id="inputSymptoms" name="symptoms" placeholder=""> <!-- დამატებულია name -->
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputDate">Choose Date </label>
                 <div class="input-group date" id="inputDate" data-date-format="mm-dd-yyyy">
-                  <input type="text" class="form-control" readonly>
+                  <input type="text" class="form-control" name="appointment_date" readonly required> <!-- დამატებულია name -->
                   <span class="input-group-addon date_icon">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
