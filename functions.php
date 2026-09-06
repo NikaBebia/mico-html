@@ -1,4 +1,5 @@
 <?php
+require_once 'data.php';
 
 // 1. დინამიური ნავიგაციის მენიუს გენერირება
 
@@ -143,3 +144,47 @@ function dinamic_footer(array $footer): void {
     echo '  </div>';
     echo '</section>';
 }
+
+// 6. ჯავშნის ფორმის ფუნქცია
+function appointmentSubmit($conn) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_appointment'])) {
+        $name = $_POST['patient_name'] ?? '';
+        $doctor = $_POST['doctor_name'] ?? '';
+        $department = $_POST['department_name'] ?? '';
+        $phone = $_POST['phone_number'] ?? '';
+        $symptoms = $_POST['symptoms'] ?? '';
+        $date = $_POST['appointment_date'] ?? '';
+
+        if (!empty($name) && !empty($phone)) {
+            $sql = "INSERT INTO appointments (patient_name, doctor_name, department_name, phone_number, symptoms, appointment_date) 
+                    VALUES ('$name', '$doctor', '$department', '$phone', '$symptoms', '$date')";
+            
+            if (mysqli_query($conn, $sql)) {
+                header("Location: appointment-success.php");
+                exit();
+            }
+        }
+    }
+}
+
+// 7. კონტაქტის ფორმის ფუნქცია
+function contactSubmit($conn) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contact'])) {
+        $name = $_POST['full_name'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $phone = $_POST['phone'] ?? '';
+        $message = $_POST['message'] ?? '';
+
+        if (!empty($name) && !empty($email)) {
+            $sql = "INSERT INTO contact_messages (full_name, email, phone, message) 
+                    VALUES ('$name', '$email', '$phone', '$message')";
+            
+            if (mysqli_query($conn, $sql)) {
+                header("Location: contact-success.php");
+                exit();
+            }
+        }
+    }
+}
+
+
