@@ -1,3 +1,6 @@
+<?php require_once 'data.php'; ?>
+<?php require_once 'functions.php'; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -69,7 +72,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <img src="images/logo.png" alt="">
             </a>
 
@@ -81,7 +84,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="d-flex mr-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
-                  <li class="nav-item active">
+                  <!-- მენიუს გადინამიურება -->
+                  <?php create_nav_menu($categories); ?>
+                  <!-- <li class="nav-item active">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
@@ -98,7 +103,7 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact Us</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <div class="quote_btn-container">
@@ -246,52 +251,50 @@
     <!-- end slider section -->
   </div>
 
-
   <!-- book section -->
-
   <section class="book_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col">
-          <form>
+          <form action="appointment-success.php" method="POST"> <!-- დამატებულია action და method post-ი -->
             <h4>
               BOOK <span>APPOINTMENT</span>
             </h4>
             <div class="form-row ">
               <div class="form-group col-lg-4">
                 <label for="inputPatientName">Patient Name </label>
-                <input type="text" class="form-control" id="inputPatientName" placeholder="">
+                <input type="text" class="form-control" id="inputPatientName" name="patient_name" placeholder=""> <!-- დამატებულია name -->
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputDoctorName">Doctor's Name</label>
-                <select name="" class="form-control wide" id="inputDoctorName">
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
+                <select class="form-control wide" id="inputDoctorName" name="doctor_name" required>  <!-- დამატებულია name -->
+                  <option value="Doctor 1">Doctor 1</option>
+                  <option value="Doctor 2">Doctor 2</option>
+                  <option value="Doctor 3">Doctor 3</option>
                 </select>
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputDepartmentName">Department's Name</label>
-                <select name="" class="form-control wide" id="inputDepartmentName">
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
-                  <option value="Normal distribution ">Normal distribution </option>
+                <select class="form-control wide" id="inputDepartmentName" name="department" required>  <!-- დამატებულია name -->
+                  <option value="Department 1">Department 1</option>
+                  <option value="Department 2">Department 2</option>
+                  <option value="Department 3">Department 3</option>
                 </select>
               </div>
             </div>
             <div class="form-row ">
               <div class="form-group col-lg-4">
                 <label for="inputPhone">Phone Number</label>
-                <input type="number" class="form-control" id="inputPhone" placeholder="XXXXXXXXXX">
+                <input type="number" class="form-control" id="inputPhone" name="phone" placeholder="XXXXXXXXXX" required>  <!-- დამატებულია name -->
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputSymptoms">Symptoms</label>
-                <input type="text" class="form-control" id="inputSymptoms" placeholder="">
+                <input type="text" class="form-control" id="inputSymptoms" name="symptoms" placeholder=""> <!-- დამატებულია name -->
               </div>
               <div class="form-group col-lg-4">
                 <label for="inputDate">Choose Date </label>
                 <div class="input-group date" id="inputDate" data-date-format="mm-dd-yyyy">
-                  <input type="text" class="form-control" readonly>
+                  <input type="text" class="form-control" name="appointment_date" readonly required> <!-- დამატებულია name -->
                   <span class="input-group-addon date_icon">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                   </span>
@@ -356,7 +359,9 @@
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6 col-lg-3">
+        <!-- treatment სექციის გადინამიურება -->
+        <?php hospital_treatments($treatments); ?>
+        <!-- <div class="col-md-6 col-lg-3">
           <div class="box ">
             <div class="img-box">
               <img src="images/t1.png" alt="">
@@ -427,7 +432,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -445,7 +450,9 @@
       </div>
       <div class="carousel-wrap ">
         <div class="owl-carousel team_carousel">
-          <div class="item">
+          <!-- our doctors სექციის გადინამიურება -->
+          <?php our_doctors($doctors); ?>
+          <!-- <div class="item">
             <div class="box">
               <div class="img-box">
                 <img src="images/team1.jpg" alt="" />
@@ -531,7 +538,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -552,7 +559,9 @@
     <div class="container px-0">
       <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <!-- testimonial სექციის გადინამიურება -->
+           <?php testimonials($testimonials); ?>
+          <!-- <div class="carousel-item active">
             <div class="box">
               <div class="client_info">
                 <div class="client_name">
@@ -606,7 +615,7 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="carousel_btn-box">
           <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -665,11 +674,13 @@
   <!-- end contact section -->
 
   <!-- info section -->
-  <section class="info_section ">
+  <!-- footer სექციის გადინამიურება  -->
+  <?php dinamic_footer($footer_info); ?> 
+  <!-- <section class="info_section ">
     <div class="container">
       <div class="info_top">
         <div class="info_logo">
-          <a href="">
+          <a href="index.php">
             <img src="images/logo.png" alt="">
           </a>
         </div>
@@ -803,7 +814,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end info_section -->
 
 
