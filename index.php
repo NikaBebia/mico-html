@@ -1,8 +1,8 @@
 <?php require_once 'data.php'; ?>
 <?php require_once 'functions.php'; ?>
 
-<?php appointmentSubmit($conn); ?>
-<?php contactSubmit($conn); ?>
+<?php appointmentSubmit($appointments); ?>
+<?php contactSubmit($contacts); ?>
 
 <!DOCTYPE html>
 <html>

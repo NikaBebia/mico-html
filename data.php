@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // 1. ნავიგაცია / კატეგორიები
 $categories = [
     [
@@ -95,6 +97,13 @@ $testimonials = [
     ]
 ];
 
+// 5. APPOINTMENT სექციის ბაზა
+$appointments = [];
+
+// 6. კონტაქტების ბზა
+$contacts = [];
+
+//7. footer-ის სექცია
 $footer_info = [
     'contact' => [
         'location' => 'Location',

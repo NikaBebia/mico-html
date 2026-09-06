@@ -1,7 +1,7 @@
 <?php require_once 'data.php'; ?>
 <?php require_once 'functions.php'; ?>
 
-<?php contactSubmit($conn); ?>
+<?php contactSubmit($contacts); ?>
 
 <!DOCTYPE html>
 <html>
@@ -74,7 +74,7 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
               <img src="images/logo.png" alt="">
             </a>
             </a>
@@ -147,18 +147,18 @@
       <div class="row">
         <div class="col-md-7">
           <div class="form_container">
-            <form action="">
+            <form action="contact-success.php" method="POST"> <!-- ჩავამატეთ acton და method post -->
               <div>
-                <input type="text" placeholder="Full Name" />
+                <input type="text" name="full_name" placeholder="Full Name" required/> <!-- ჩავამატეთ name და required -->
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" name="email" placeholder="Email" required/> <!-- ჩავამატეთ name და required -->
               </div>
               <div>
-                <input type="text" placeholder="Phone Number" />
+                <input type="text" name="phone" placeholder="Phone Number" required/> <!-- ჩავამატეთ name და required -->
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" class="message-box" name="message" placeholder="Message" required/> <!-- ჩავამატეთ name და required -->
               </div>
               <div class="btn_box">
                 <button>

@@ -145,7 +145,7 @@ function dinamic_footer(array $footer): void {
 }
 
 // 6. ჯავშნის ფორმის ფუნქცია
-function appointmentSubmit($conn) {
+function appointmentSubmit(array &$appointments): void {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_appointment'])) {
         $name = $_POST['patient_name'] ?? '';
         $doctor = $_POST['doctor_name'] ?? '';
@@ -155,19 +155,23 @@ function appointmentSubmit($conn) {
         $date = $_POST['appointment_date'] ?? '';
 
         if (!empty($name) && !empty($phone)) {
-            $sql = "INSERT INTO appointments (patient_name, doctor_name, department_name, phone_number, symptoms, appointment_date) 
-                    VALUES ('$name', '$doctor', '$department', '$phone', '$symptoms', '$date')";
-            
-            if (mysqli_query($conn, $sql)) {
-                header("Location: appointment-success.php");
-                exit();
-            }
+            $appointments[] = [
+                'patient_name'    => $name,
+                'doctor_name'     => $doctor,
+                'department_name' => $department,
+                'phone_number'    => $phone,
+                'symptoms'        => $symptoms,
+                'appointment_date' => $date
+            ];
+
+            header("Location: appointment-success.php");
+            exit();
         }
     }
 }
 
 // 7. კონტაქტის ფორმის ფუნქცია
-function contactSubmit($conn) {
+function contactSubmit(array &$contacts): void {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contact'])) {
         $name = $_POST['full_name'] ?? '';
         $email = $_POST['email'] ?? '';
@@ -175,13 +179,15 @@ function contactSubmit($conn) {
         $message = $_POST['message'] ?? '';
 
         if (!empty($name) && !empty($email)) {
-            $sql = "INSERT INTO contact_messages (full_name, email, phone, message) 
-                    VALUES ('$name', '$email', '$phone', '$message')";
-            
-            if (mysqli_query($conn, $sql)) {
-                header("Location: contact-success.php");
-                exit();
-            }
+            $contacts[] = [
+                'full_name' => $name,
+                'email'     => $email,
+                'phone'     => $phone,
+                'message'   => $message
+            ];
+
+            header("Location: contact-success.php");
+            exit();
         }
     }
 }
